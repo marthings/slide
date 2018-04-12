@@ -1,0 +1,10 @@
+<% if @presentation.cover.attached? %>
+  <%= image_tag @presentation.cover %>
+<% end %>
+<p>
+  <strong>Titless:</strong>
+  <%= @presentation.title %>
+</p>
+
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<%= link_to 'Back', presentations_path %>
