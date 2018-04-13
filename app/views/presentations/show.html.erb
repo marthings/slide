@@ -1,10 +1,14 @@
 <% if @presentation.cover.attached? %>
   <%= image_tag @presentation.cover %>
 <% end %>
-<p>
-  <strong>Titless:</strong>
-  <%= @presentation.title %>
-</p>
+
+<h1><%= @presentation.title %><%= @presentation.id %></h1>
 
 <%= link_to 'Edit', edit_presentation_path(@presentation) %> |
 <%= link_to 'Back', presentations_path %>
+
+
+<h2>Parts</h2>
+
+<%= render @presentation.parts %>
+<%= link_to "Create part", new_presentation_part_path(@presentation) %>
