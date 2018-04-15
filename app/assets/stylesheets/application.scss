@@ -1,4 +1,10 @@
 $enable-rounded: false;
 
+@import "medium-editor/medium-editor";
+@import "medium-editor/themes/beagle";
 @import "bootstrap";
 @import "presentations";
+
+.editable:focus {
+  outline: none;
+}
