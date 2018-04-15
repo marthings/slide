@@ -13,22 +13,25 @@ class ApplicationController < ActionController::Base
     presentations_path
   end
 
-  def after_sign_out_path_for(user)
-    root_url
+  def after_sign_out_path_for(resource)
+    pages_path("bye")
+  end
+
+  def after_update_path_for(resource)
+    presentations_path
   end
 
   private
 
-  def set_current_user
-    Current.user = current_user
-  end
-  
+    def set_current_user
+      Current.user = current_user
+    end
 
   protected
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :avatar, :nickname])
     end
 
 end
