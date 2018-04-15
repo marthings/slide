@@ -9,12 +9,18 @@
   </thead>
 
   <tbody>
+    <% if @presentations.any? %>
     <% @presentations.each do |presentation| %>
       <tr>
         <td><%= presentation.title %></td>
         <td><%= link_to 'Show', presentation %></td>
         <td><%= link_to 'Edit', edit_presentation_path(presentation) %></td>
         <td><%= link_to 'Destroy', presentation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% else %>
+      <tr>
+        <td>Nope</td>
       </tr>
     <% end %>
   </tbody>
