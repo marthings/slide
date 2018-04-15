@@ -14,4 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require activestorage
+//= require direct_upload
+
+console.log("Hello")
