@@ -1,5 +1,6 @@
 <div class="card">
   <h3><%= part.title %></h3>
+  <h3><%= part.body %></h3>
   <%= link_to 'Edit', edit_presentation_part_path(@presentation, part) %>
   <%= link_to 'Destroy', [@presentation, part], method: :delete, confirm: "Are your sure?" %>
 </div>

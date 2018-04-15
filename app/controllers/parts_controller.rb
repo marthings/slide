@@ -53,6 +53,6 @@ class PartsController < ApplicationController
     end
 
     def parts_params
-      params.required(:part).permit(:title, :id)
+      params.required(:part).permit(:title, :id, :body)
     end
 end
