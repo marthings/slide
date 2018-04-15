@@ -4,7 +4,7 @@ class PresentationsController < ApplicationController
   # GET /presentations
   # GET /presentations.json
   def index
-    @presentations = Presentation.all
+    @presentations = current_user.presentations.all
   end
 
   # GET /presentations/1
@@ -24,7 +24,7 @@ class PresentationsController < ApplicationController
   # POST /presentations
   # POST /presentations.json
   def create
-    @presentation = current_user.presentations.new(presentation_params)
+    @presentation = Presentation.new(presentation_params)
 
     respond_to do |format|
       if @presentation.save
