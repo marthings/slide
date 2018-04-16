@@ -1,5 +1,5 @@
 <%= form_with(model: [ @presentation, Part.new ]) do |form| %>
   <%= form.text_field :title %>
-  <%= form.text_field :body, class: "editable" %>
+  <%= form.text_area :body, class: "editable" %>
   <%= form.submit class: "btn btn-primary" %>
 <% end %>
