@@ -15,6 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require direct_upload
-//= require medium-editor
 
 console.log("Hello")

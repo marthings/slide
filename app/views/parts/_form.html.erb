@@ -1,0 +1,5 @@
+<%= form_with(model: [ @presentation, @part ]) do |form| %>
+  <%= form.text_field :title, class: "title-control", placeholder: "Enter your title" %>
+  <%= form.text_area :body, class: "editable" %>
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

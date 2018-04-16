@@ -1,10 +1,42 @@
 $enable-rounded: false;
 
-@import "medium-editor/medium-editor";
-@import "medium-editor/themes/beagle";
 @import "bootstrap";
 @import "presentations";
 
-.editable:focus {
-  outline: none;
+:root {
+  --brand: #000;
+  --brand-text: #fff;
+
+  --site-container: 1170px;
+  --spacing: 20px;
+
+  --default: royalblue;
+  --default-light: lightblue;
+
+  --danger: darkred;
+  --danger-light: red;
+
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--spacing);
+}
+
+.title-control {
+  border: 0;
+  font-size: 200%;
+  width: 100%;
+}
+
+.editable,
+.title-control {
+  &:focus {
+    outline: none;
+  }
 }

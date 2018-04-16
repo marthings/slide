@@ -15,16 +15,14 @@ class PartsController < ApplicationController
 
   def create
     @presentation.parts.create(parts_params)
-    redirect_to @presentation
+    redirect_to @presentation, notice: "New Part Created!"
   end
 
   def update
     if @part.update(parts_params)
-      flash[:notice] = "Updated succesfully!"
-      redirect_to @presentation
+      redirect_to @presentation, notice: "Updated Succesfully!"
     else
-      flash[:error] = "There was an error updating the part"
-      render :show
+      render :show, notice: "There was an error updating the part"
     end
     
   end
@@ -34,11 +32,9 @@ class PartsController < ApplicationController
     title = @part.title
 
     if @part.destroy
-      flash[:notice] = "#{title} was deleted succesfully"
-      redirect_to @presentation
+      redirect_to @presentation, notice: "#{title} was deleted succesfully"
     else
-      flash[:error] = "There was an error deleting the part"
-      render :show
+      render :show, notice: "There was an error deleting the part"
     end
 
   end
