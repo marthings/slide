@@ -1,5 +1,5 @@
 <% if @presentation.cover.attached? %>
-  <%= image_tag @presentation.cover %>
+  <%= image_tag @presentation.cover.variant(resize: "250x250") %>
 <% end %>
 
 <h1><%= @presentation.title %></h1>

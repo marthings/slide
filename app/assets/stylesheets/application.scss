@@ -1,5 +1,6 @@
 $enable-rounded: false;
 
+$headings-font-weight: 900;
 @import "bootstrap";
 @import "presentations";
 
@@ -22,6 +23,16 @@ $enable-rounded: false;
   padding: 1rem 0;
 }
 
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+.site-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 20vh;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -32,6 +43,7 @@ $enable-rounded: false;
   border: 0;
   font-size: 200%;
   width: 100%;
+  padding: 0;
 }
 
 .editable,

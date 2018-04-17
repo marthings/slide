@@ -7,10 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/themes/beagle.min.css" type="text/css" media="screen" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
   </head>
 
   <body>
@@ -22,8 +22,10 @@
     <% if alert.present? %>
       <div class="alert alert-warning"><%= alert %></div>
     <% end %>
-    <div class="container-fluid">
-      <%= yield %>
+    <div class="site-wrapper">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
     </div>
     <script>
       var editor = new MediumEditor('.editable', {
