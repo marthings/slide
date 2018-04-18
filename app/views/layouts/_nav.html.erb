@@ -7,10 +7,10 @@
         <li class="nav-item"><%= link_to "Dashboard", presentations_path, :class=> 'nav-link' %></li>
         <li class="nav-item">
           <%= link_to(edit_user_registration_path, :class => "nav-link") do %>
-            <% if current_user.avatar.attached? %>
+            <% if Current.user.avatar.attached? %>
               <%= image_tag current_user.avatar.variant(resize: "30x30") %>
             <% end %>
-            <%= current_user.email %>
+            <%= Current.user.email %>
           <% end %>
         </li>
       <% else %>

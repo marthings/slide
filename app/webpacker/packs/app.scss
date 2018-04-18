@@ -1,15 +1,15 @@
 $enable-rounded: false;
 
 $headings-font-weight: 900;
-@import "bootstrap";
-@import "presentations";
+
+@import '~bootstrap/scss/bootstrap';
 
 :root {
   --brand: #000;
   --brand-text: #fff;
 
-  --site-container: 1170px;
-  --spacing: 20px;
+  --site-container: 1200px;
+  --spacing: 30px;
 
   --default: royalblue;
   --default-light: lightblue;
