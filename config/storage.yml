@@ -12,7 +12,7 @@ amazon:
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: ams3
   bucket: preze-space
-  endpoint: 'https://preze-space.ams3.digitaloceanspaces.com'
+  endpoint: 'https://ams3.digitaloceanspaces.com'
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
