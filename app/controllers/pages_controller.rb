@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
+  before_action :set_users
+  
   def home
-    @Users = User.all
+    @users = User.all
   end
 
   def show
@@ -14,5 +16,9 @@ class PagesController < ApplicationController
   private
     def valid_page?
       File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}.html.erb"))
+    end
+
+    def set_users
+      @users = User.all
     end
 end

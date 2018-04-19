@@ -4,7 +4,7 @@
 
   <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to "Dashboard", presentations_path, :class=> 'nav-link' %></li>
+        <li class="nav-item"><%= link_to "Explore", pages_path("home"), :class=> 'nav-link' %></li>
         <li class="nav-item">
           <%= link_to(edit_user_registration_path, :class => "nav-link") do %>
             <% if Current.user.avatar.attached? %>
