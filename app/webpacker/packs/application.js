@@ -7,17 +7,20 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+// import "jquery"
 import "bootstrap"
+
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 
 Rails.start();
 Turbolinks.start();
 
-console.log('Hello World from Webpacker')
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
 
-$(function () {
-  console.log('Hello World from jquery');
-});
+const application = Application.start()
+const context = require.context("controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))
 
 // $(document).on('turbolinks:load', function (){ alert("turbolinks on load event works") });
