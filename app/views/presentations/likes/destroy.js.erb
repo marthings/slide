@@ -1,0 +1,2 @@
+var ele = document.querySelector(".<%= dom_id(@presentation) %>-likes")
+ele.innerHTML = "<%=j render partial: 'presentations/likes', locals: { presentation: @presentation } %>"

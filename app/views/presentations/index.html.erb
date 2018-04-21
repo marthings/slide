@@ -2,20 +2,9 @@
 <%= link_to 'New Presentation', new_presentation_path %>
 
 <div class="grid mt-2">
-    <% if @presentations.any? %>
-    <% @presentations.each do |presentation| %>
-      <div class="card">
-        <% if presentation.cover.attached? %>
-          <%= image_tag presentation.cover.variant(resize: "250x250"), class: "card-img-top" %>
-        <% end %>
-        <div class="card-body">
-          <h3><%= presentation.title %></h3>
-          <%= link_to presentation.title, presentation, class: "btn btn-primary" %>
-          <%= link_to 'Edit', edit_presentation_path(presentation), class: "btn btn-link" %>
-        </div>
-      </div>
-    <% end %>
-    <% else %>
-      <td>Nope</td>
-    <% end %>
+  <% if @presentations.any? %>
+    <%= render @presentations %>
+  <% else %>
+    <td>Nope</td>
+  <% end %>
 </div>

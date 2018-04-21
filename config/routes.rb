@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :presentations do
     resources :parts
+    resource :like, module: :presentations
   end
 
   # Use another controller to override redirects

@@ -8,5 +8,17 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   
   has_many :presentations
+  has_many :likes
+  
   has_one_attached :avatar
+
+  def likes?(presentation)
+    presentation.likes.where(user_id: id).any?
+  end
+
+  def avatar_url
+    hash = Digest::MD5.hexdigest(email)
+    "http://www.gravatar.com/avatar/#{hash}"
+  end
+  
 end
