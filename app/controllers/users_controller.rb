@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user
+
   def show
+    @presentations = @user.presentations.all
   end
 
   def update

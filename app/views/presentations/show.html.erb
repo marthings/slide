@@ -1,12 +1,4 @@
-<% if @presentation.cover.attached? %>
-  <%= image_tag @presentation.cover.variant(resize: "250x250") %>
-<% end %>
-
-<h1><%= @presentation.title %></h1>
-
-<div class="<%= dom_id(@presentation) %>-likes">
-  <%= render partial: "likes", locals: { presentation: @presentation } %>
-</div>
+<%= render @presentation %>
 
 <%= link_to 'Edit', edit_presentation_path(@presentation) %> |
 <%= link_to 'Back', presentations_path %>

@@ -1,10 +1,10 @@
-<h1>Popular presentations</h1>
+<h1>Popular prezes</h1>
 
 <% @users.each do |user| %>
   <div class="users mb-4">
   <% if user.nickname.present? %>
   <h3><%= user.nickname %></h3>
-  <%= link_to "Show presentations", user_path(user), class: "btn btn-primary" %>
+  <%= link_to "Show presentations", user_path(user.id), class: "btn btn-primary" %>
   <% end %>
   </div>
 <% end %>

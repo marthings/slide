@@ -1,2 +1,10 @@
 <h1>Presentations</h1>
-<%= @user.nickname %>
+
+<% @presentations.each do |presentation| %>
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3><%= presentation.title %></h3>
+      <%= render partial: "presentations/likes", locals: { presentation: presentation } %>
+    </div>
+  </div>
+<% end %>
