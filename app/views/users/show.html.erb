@@ -1,10 +1,5 @@
 <h1>Presentations</h1>
 
-<% @presentations.each do |presentation| %>
-  <div class="card mb-4">
-    <div class="card-body">
-      <h3><%= presentation.title %></h3>
-      <%= render partial: "presentations/likes", locals: { presentation: presentation } %>
-    </div>
-  </div>
-<% end %>
+<div class="grid mt-2">
+  <%= render @user.presentations %>
+</div>

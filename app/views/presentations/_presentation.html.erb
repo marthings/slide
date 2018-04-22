@@ -7,7 +7,7 @@
     <%= link_to presentation.title, presentation, class: "btn btn-primary" %>
     <%= link_to 'Edit', edit_presentation_path(presentation), class: "btn btn-link" %>
     <div class="<%= dom_id(presentation) %>-likes">
-      <%= render partial: "likes", locals: { presentation: presentation } %>
+      <%= render partial: "presentations/likes", locals: { presentation: presentation } %>
     </div>
   </div>
 </div>
