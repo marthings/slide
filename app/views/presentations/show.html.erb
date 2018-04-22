@@ -1,10 +1,22 @@
-<%= render @presentation %>
+<% if @presentation.cover.attached? %>
+  <%= image_tag @presentation.cover.variant(resize: "250x250"), class: "card-img-top" %>
+<% end %>
 
-<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
-<%= link_to 'Back', presentations_path %>
+<h1><%= @presentation.title %></h1>
 
-<h2>Parts</h2>
-<%= link_to "Create part", new_presentation_part_path(@presentation, @part) %>
+<div class="<%= dom_id(@presentation) %>-likes">
+  <%= render partial: "presentations/likes", locals: { presentation: @presentation } %>
+</div>
+
+<% if policy(@presentation).edit? %>
+  <%= link_to 'Edit', edit_presentation_path(@presentation), class: "btn btn-primary" %>
+<% end %>
+
+<h3>Parts</h3>
+
+<% if policy(@presentation).edit? %>
+  <%= link_to "Create part", new_presentation_part_path(@presentation, @part) %>
+<% end %>
 
 <div class="parts mt-2">
   <% if @presentation.parts.any? %>

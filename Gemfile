@@ -12,11 +12,13 @@ gem 'puma', '~> 3.11'
 # Nicer forms
 gem 'simple_form'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+#gem 'uglifier', '>= 1.3.0'
+#Authorize things
+gem "pundit"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 # Webpacker
 gem 'webpacker', '~> 3.4'
 # AWS sdk

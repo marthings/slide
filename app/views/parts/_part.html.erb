@@ -2,6 +2,8 @@
   <div class="card-body">
     <h3><%= part.title %></h3>
     <%= part.body.html_safe %>
+    <% if policy(@presentation).edit? %>
     <%= link_to 'Edit', edit_presentation_part_path(@presentation, part) %>
+    <% end %>
   </div>
 </div>

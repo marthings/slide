@@ -3,9 +3,8 @@
     <%= image_tag presentation.cover.variant(resize: "250x250"), class: "card-img-top" %>
   <% end %>
   <div class="card-body">
-    <h3><%= presentation.title %></h3>
-    <%= link_to presentation.title, presentation, class: "btn btn-primary" %>
-    <%= link_to 'Edit', edit_presentation_path(presentation), class: "btn btn-link" %>
+    <h3><%= link_to presentation.title, presentation %></h3>
+    
     <div class="<%= dom_id(presentation) %>-likes">
       <%= render partial: "presentations/likes", locals: { presentation: presentation } %>
     </div>

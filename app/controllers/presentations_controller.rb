@@ -1,15 +1,11 @@
 class PresentationsController < ApplicationController
   before_action :set_presentation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  # GET /presentations
-  # GET /presentations.json
-  def index
-    @presentations = current_user.presentations.all
-  end
 
   # GET /presentations/1
   # GET /presentations/1.json
   def show
+    
   end
 
   # GET /presentations/new
@@ -19,13 +15,14 @@ class PresentationsController < ApplicationController
 
   # GET /presentations/1/edit
   def edit
+    
   end
 
   # POST /presentations
   # POST /presentations.json
   def create
     @presentation = Presentation.new(presentation_params)
-
+    authorize @presentation
     respond_to do |format|
       if @presentation.save
         format.html { redirect_to @presentation, notice: 'Presentation was successfully created.' }
@@ -56,7 +53,7 @@ class PresentationsController < ApplicationController
   def destroy
     @presentation.destroy
     respond_to do |format|
-      format.html { redirect_to presentations_url, notice: 'Presentation was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Presentation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +62,7 @@ class PresentationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_presentation
       @presentation = Presentation.find(params[:id])
+      authorize @presentation
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

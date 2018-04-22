@@ -42,10 +42,12 @@ class PartsController < ApplicationController
   private
     def set_presentation
       @presentation = Presentation.find(params[:presentation_id])
+      
     end
 
     def set_part
       @part = Part.find(params[:id])
+      authorize @presentation
     end
 
     def parts_params
