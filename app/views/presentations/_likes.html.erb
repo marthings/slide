@@ -1,7 +1,9 @@
 <% if user_signed_in? && current_user.likes?(presentation)%>
   <%= link_to "Unlike", presentation_like_path(presentation), method: :delete, remote: true %>
-<% else %>
+<% elsif user_signed_in? %>
   <%= link_to "like", presentation_like_path(presentation), method: :post, remote: true %>
+<% else %>
+  <%= link_to "like", presentation_like_path(presentation), method: :post %>
 <% end %>
 
 <%= presentation.likes.count %>
