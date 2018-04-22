@@ -4,6 +4,13 @@ class RegistrationsController < Devise::RegistrationsController
   def index
   end
 
+  def create
+    super
+    if @user.persisted?
+      UserMailer.with(user: @user).welcome_email.deliver_later
+    end
+  end
+
   def after_sign_in_path_for(resource)
     presentations_path
   end
