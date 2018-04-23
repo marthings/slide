@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :presentations, except: [:index] do
     resources :parts
+    # module: lets us have /presentations/likes/likes_controller.rb
     resource :like, module: :presentations
   end
 
