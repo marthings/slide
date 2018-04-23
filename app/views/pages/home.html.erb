@@ -3,10 +3,10 @@
 <% @users.each do |user| %>
   <div class="users mb-4">
   <% if user.nickname.present? %>
-      <% if Current.user.avatar.attached? %>
-        <%= image_tag current_user.avatar.variant(resize: "20x20") %>
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar.variant(resize: "20x20") %>
       <% else %>
-        <%= image_tag current_user.avatar_url, width: 20 %>
+        <%= image_tag user.avatar_url, width: 20 %>
       <% end %>
       <h3><%= link_to user.nickname, user_path(user.id) %></h3>
   <% end %>
